@@ -111,14 +111,12 @@ function Conway() {
                     setAutoTimeoutNext(0);
                 }, Date.now() - autoTimeoutNext);
             }else{
-                console.log("Called");
                 let start = Date.now();
                 handleNextGeneration().then();
                 let end = Date.now();
                 setAutoTimeoutNext(Date.now() + generationMinTime-(end-start));
             }
         }
-        console.log("Left");
     }, [autoTimeoutNext, autoGenerating, configuration, generationMinTime])
 
     const handleStartStopAuto = async () => {
